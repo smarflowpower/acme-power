@@ -6,6 +6,9 @@ import type { PageBlocks } from "@/lib/db/schema";
 import BlockRenderer from "@/blocks/BlockRenderer";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 interface Props {
   params: Promise<{ slug?: string[] }>;
 }

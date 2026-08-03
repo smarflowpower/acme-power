@@ -3,6 +3,9 @@ import Link from "next/link";
 import { db } from "@/lib/db/client";
 import { pages } from "@/lib/db/schema";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 async function getNavPages() {
   if (!db) return [];
   try {
