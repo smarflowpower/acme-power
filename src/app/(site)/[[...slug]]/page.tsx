@@ -35,11 +35,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CatchAllPage({ params }: Props) {
   const { slug = [] } = await params;
 
-  if (slug.length === 0) {
-    const { default: HomePage } = await import("@/app/page");
-    return <HomePage />;
-  }
-
   const page = await getPage(slug);
   if (!page || page.status !== "published") notFound();
 
